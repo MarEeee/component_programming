@@ -9,27 +9,27 @@ const Clock = () => {
     });
 
     // *** GET CORRECT DEG FUNCTIONS
-    const calcHourHandDeg = (date) => {
+    const calcHourDeg = (date) => {
         return date.getHours()*30;
     }
-    const calcMinuteHandDeg = (date) => {
+    const calcMinuteDeg = (date) => {
         return date.getMinutes()*6;
     }
-    const calcSecondHandDeg = (date) =>{
+    const calcSecondDeg = (date) =>{
         return date.getSeconds()*6;
     }
-    const getDataGed = () =>{
+    const getData = () =>{
         const degDate = new Date();
-        const hour = calcHourHandDeg(degDate);
-        const minutes = calcMinuteHandDeg(degDate);
-        const seconds = calcSecondHandDeg(degDate);
+        const hour = calcHourDeg(degDate);
+        const minutes = calcMinuteDeg(degDate);
+        const seconds = calcSecondDeg(degDate);
         setData({hour, minutes, seconds});
     }
 
     useEffect(()=>{
-        getDataGed()
+        getData()
         setInterval(()=>{
-            getDataGed();
+            getData();
         }, 1000)
     },[])
     return(
